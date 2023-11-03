@@ -1,6 +1,7 @@
 ﻿@model User
 @{
     Layout = "../Shared/_LoginLayout.cshtml";
+    ViewData["Title"] = "Giriş Yap";
 
 }
 
@@ -16,13 +17,11 @@
                     <center>
                         <h2> GİRİŞ YAP </h2>
                     </center>
-                    <!-- Email input -->
                     <div class="form-outline mb-4">
                         <label class="form-label">Kullanıcı Adı</label>
                         <input type="text" id="form1Example13" class="form-control form-control-lg" name="Username" asp-for="Username" required />
                     </div>
 
-                    <!-- Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form1Example23">Şifre</label>
                         <input type="password" id="password" name="Password" asp-for=Password class="form-control form-control-lg" required />

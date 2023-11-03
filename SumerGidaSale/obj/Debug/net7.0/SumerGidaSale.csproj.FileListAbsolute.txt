@@ -74,3 +74,9 @@ D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\Sume
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\SumerGidaSale.genruntimeconfig.cache
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\ref\SumerGidaSale.dll
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\scopedcss\Views\Shared\_LoginLayout.cshtml.rz.scp.css
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\System.Web.Razor.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\System.Web.Helpers.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\System.Web.WebPages.Deployment.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\System.Web.WebPages.Razor.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\System.Web.WebPages.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll

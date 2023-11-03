@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SumerGidaSale.Models;
-using System.Diagnostics;
+using System.Collections;
+using System.Web.Helpers;
 
 namespace SumerGidaSale.Controllers
 {
@@ -9,27 +10,33 @@ namespace SumerGidaSale.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        MyDbContext _context;
+        public HomeController(MyDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            var sales = _context.Sales.ToList();
+            return View(sales);
+        }
+        public IActionResult Graffic()
+        {
+            var veriler = _context.Sales.GroupBy(s => s.Province)
+                .Select(g => new { Province = g.Key, SaleQuantity = g.Sum(s => s.SaleQuantity) })
+                .ToList();
+
+            var provinces = veriler.Select(v => v.Province).ToArray();
+            var saleQuantities = veriler.Select(v => v.SaleQuantity).ToArray();
+
+            ViewBag.Provinces = provinces;
+            ViewBag.SaleQuantities = saleQuantities;
+
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+
     }
 }

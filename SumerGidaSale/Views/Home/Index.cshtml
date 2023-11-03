@@ -1,5 +1,52 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<Sale>
 
-index
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<div class="d-flex justify-content-end ">
+    <button id="openModalBtn" class="btn btn-primary" onclick="openModal()">Kayıt Ekle</button>
+    <button id="closeModalBtn" class="btn btn-danger" style="display:none" onclick="closeModal()">Kapat</button>
+</div>
+<div id="myModalPartial">
+    @Html.Partial("_ModalPartial")
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Müşteri Kodu</th>
+            <th scope="col">Müşteri Ünvanı</th>
+            <th scope="col">İl</th>
+            <th scope="col">İlçe</th>
+            <th scope="col">Satış Miktarı</th>
+            <th scope="col">İşlem</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var counter = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@(++counter)</th>
+                <td>@item.CustomerCode</td>
+                <td>@item.CustomerTitle</td>
+                <td>@item.Province</td>
+                <td>@item.District</td>
+                <td>@item.SaleQuentity</td>
+                <td><button class="btn btn-success" onclick="showSaleForm()">Satış Yap </button></td>
+                <td>
+                    <div id="saleForm" style="display:none">
+                        Kaç adet satış yapılacak: <input type="number" />
+                        <input type="button" value="Onayla" class="btn btn-warning">
+                        <input id="closeForm" type="button" value="Kapat" class="btn btn-danger" onclick="closeSaleForm()">
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
