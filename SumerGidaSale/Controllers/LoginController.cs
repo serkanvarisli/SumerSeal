@@ -52,6 +52,7 @@ namespace ShoppingList.Controllers
             else
             {
                 TempData["ErrorMessage"] = "Kullanıcı adı veya şifre hatalı";
+
             }
             return View(model);
         }
@@ -63,7 +64,5 @@ namespace ShoppingList.Controllers
             HttpContext.SignOutAsync("UserAuthentication"); // Oturumu sonlandır
             return RedirectToAction("Index", "Home"); // Anasayfaya yönlendir
         }
-
-       
     }
 }

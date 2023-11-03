@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Codding\\Programming\\.net\\SumerGidaSaleSln\\SumerGidaSale\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
       "Id": "D:\\Codding\\Programming\\.net\\SumerGidaSaleSln\\SumerGidaSale\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,45 +1,40 @@
 ﻿@model User
+@{
+    Layout = "../Shared/_LoginLayout.cshtml";
 
-@using (Html.BeginForm("Index", "Login", FormMethod.Post))
-{
-<div id="main-wrapper" class="container">
-    <div class="row justify-content-center">
-        <div class="col">
-            <div class="card border-0">
-                <div class="card-body p-0">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6">
-                            <div class="p-5">            
-                                <div class="mb-5">
-                                    <h3 class="h4 font-weight-bold text-theme">GİRİŞ YAP</h3>
-                                </div>
-                                <h6 class="h5 mb-0">Hoşgeldiniz</h6>
-                                <p class="text-muted mt-2 mb-5"> </p>
-                                    <div class="form-group">
-                                        <label for="email"> Mail Adresi</label>
-                                        <input type="text" name="Username" id="Username" asp-for="Username" class="form-control" title="Girin" required>
-                                    </div>
-                                    <div class="form-group mb-5">
-                                        <label for="password">Şifre</label>
-                                        <input type="password" name="Password" id="Password" asp-for="Password" class="form-control" title="Girin" required>
-                                        <span name="showText" id="showText" class="textShowPassword">Şifreyi Göster </span>
-                                        <input type="checkbox" name="showPassword" id="showPassword"  />
-                                    </div>
-                                    <button type="submit" class="btn btn-theme">Giriş Yap</button>
-                                    <br>
-                                    @TempData["ErrorMessage"]
-                            </div>
-                        </div>
+}
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://www.sumergida.com/Content/images/logo/sumer.png"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form asp-action="index" asp-controller="login" method="post">
+                    <center>
+                        <h2> GİRİŞ YAP </h2>
+                    </center>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label">Kullanıcı Adı</label>
+                        <input type="text" id="form1Example13" class="form-control form-control-lg" name="Username" asp-for="Username" required />
                     </div>
 
-                </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form1Example23">Şifre</label>
+                        <input type="password" id="password" name="Password" asp-for=Password class="form-control form-control-lg" required />
+                        <input type="checkbox" id="showPass" /> Şifreyi göster
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</button>
+                    </center>
+                    <p></p>
+                    <br />
+                </form>
             </div>
-
         </div>
     </div>
-</div>
-<br />
-<br />
- }
-
-<script src="~/js/login.js" asp-append-version="true"></script>
+</section>

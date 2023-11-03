@@ -1,4 +1,12 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener("DOMContentLoaded", function () {
+    var passwordInput = document.getElementById("password");
+    var showPassCheckbox = document.getElementById("showPass");
 
-// Write your JavaScript code.
+    showPassCheckbox.addEventListener("change", function () {
+        if (showPassCheckbox.checked) {
+            passwordInput.type = "text"; // Şifreyi göster
+        } else {
+            passwordInput.type = "password"; // Şifreyi gizle
+        }
+    });
+});

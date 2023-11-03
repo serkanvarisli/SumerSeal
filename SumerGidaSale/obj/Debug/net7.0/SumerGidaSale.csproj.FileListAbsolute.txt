@@ -73,3 +73,4 @@ D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\refi
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\SumerGidaSale.pdb
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\SumerGidaSale.genruntimeconfig.cache
 D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\ref\SumerGidaSale.dll
+D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale\obj\Debug\net7.0\scopedcss\Views\Shared\_LoginLayout.cshtml.rz.scp.css
