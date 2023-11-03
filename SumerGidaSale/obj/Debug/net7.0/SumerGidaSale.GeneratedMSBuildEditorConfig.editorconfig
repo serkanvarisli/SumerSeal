@@ -16,16 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Codding\Programming\.net\SumerGidaSaleSln\SumerGidaSale
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Home/Graffic.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHcmFmZmljLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Home/_ModalPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTW9kYWxQYXJ0aWFsLmNzaHRtbA==
+[D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Home/_ModalAddPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTW9kYWxBZGRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Home/_ModalGraphicPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTW9kYWxHcmFwaGljUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Codding/Programming/.net/SumerGidaSaleSln/SumerGidaSale/Views/Login/Index.cshtml]

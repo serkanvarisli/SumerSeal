@@ -1,23 +1,13 @@
-$(function () {
-    $("#showPass").change(function () {
-        const checked = $(this).is(":checked");
-        if (checked) {
-            $("#Password").attr("type", "text");
-            const metin = document.getElementById("showText").innerHTML;
+//Þifre
+document.addEventListener("DOMContentLoaded", function () {
+    var passwordInput = document.getElementById("password");
+    var showPassCheckbox = document.getElementById("showPass");
 
-            // Belirli bir metni deðiþtir
-            const yeniMetin = metin.replace("Þifreyi Göster ", "Þifreyi Gizle ");
-
-            // Metni güncelle
-            document.getElementById("showText").innerHTML = yeniMetin;
+    showPassCheckbox.addEventListener("change", function () {
+        if (showPassCheckbox.checked) {
+            passwordInput.type = "text"; // Þifreyi göster
         } else {
-            $("#Password").attr("type", "password");
-            const metin = document.getElementById("showText").innerHTML;
-
-            const yeniMetin = metin.replace("Þifreyi Gizle ", "Þifreyi Göster ");
-
-            // Metni güncelle
-            document.getElementById("showText").innerHTML = yeniMetin;
+            passwordInput.type = "password"; // Þifreyi gizle
         }
     });
 });

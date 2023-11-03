@@ -1,33 +1,20 @@
 ﻿
-document.addEventListener("DOMContentLoaded", function () {
-    var passwordInput = document.getElementById("password");
-    var showPassCheckbox = document.getElementById("showPass");
 
-    showPassCheckbox.addEventListener("change", function () {
-        if (showPassCheckbox.checked) {
-            passwordInput.type = "text"; // Şifreyi göster
-        } else {
-            passwordInput.type = "password"; // Şifreyi gizle
-        }
+// Satış form jquery
+$(document).ready(function () {
+    $(".open-sale-form").click(function () {
+        var saleForm = $(this).closest("tr").find(".sale-form");
+        saleForm.show();
+    });
+
+    $(".close-sale-form").click(function () {
+        var saleForm = $(this).closest(".sale-form");
+        saleForm.hide();
     });
 });
 
-//Satış Yapma Formu
-function showSaleForm() {
-    var saleForm = document.getElementById("saleForm");
-    if (saleForm.style.display === "none" || saleForm.style.display === "") {
-        saleForm.style.display = "block";
-    } else {
-        saleForm.style.display = "none";
-    }
-}
-//Kapat
-function closeSaleForm() {
-    var saleForm = document.getElementById("saleForm");
-    saleForm.style.display = "none";
-}
 
-//modal
+//Ekleme Formu
 function openModal() {
     var myModal = document.getElementById("myModal");
     var closeModal = document.getElementById("closeModalBtn")

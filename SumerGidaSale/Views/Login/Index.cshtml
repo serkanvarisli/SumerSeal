@@ -27,6 +27,7 @@
                         <input type="password" id="password" name="Password" asp-for=Password class="form-control form-control-lg" required />
                         <input type="checkbox" id="showPass" /> Şifreyi göster
                     </div>
+                    @TempData["ErrorMessage"]
                     <center>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</button>
                     </center>

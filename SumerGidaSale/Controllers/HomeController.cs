@@ -18,23 +18,18 @@ namespace SumerGidaSale.Controllers
 
         public IActionResult Index()
         {
+            var veriler = _context.Sales.GroupBy(s => s.Province)
+               .Select(g => new { Province = g.Key, TotalSaleQuantity = g.Sum(s => s.SaleQuentity) })
+               .ToList();
+
+            var provinces = veriler.Select(v => v.Province).ToArray();
+            var totalSaleQuantities = veriler.Select(v => v.TotalSaleQuantity).ToArray();
+
+            ViewBag.Provinces = provinces;
+            ViewBag.TotalSaleQuantities = totalSaleQuantities;
             var sales = _context.Sales.ToList();
+
             return View(sales);
         }
-        public IActionResult Graffic()
-        {
-            var veriler = _context.Sales.ToList();
-
-            var labels = veriler.Select(s => s.Province).ToArray();
-            var data = veriler.Select(s => s.SaleQuentity).ToArray();
-
-            ViewBag.Labels = labels;
-            ViewBag.Data = data;
-
-            return View(veriler);
-        }
-
-
-
     }
 }

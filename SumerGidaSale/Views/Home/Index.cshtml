@@ -8,7 +8,7 @@
     <button id="closeModalBtn" class="btn btn-danger" style="display:none" onclick="closeModal()">Kapat</button>
 </div>
 <div id="myModalPartial">
-    @Html.Partial("_ModalPartial")
+    @Html.Partial("_ModalAddPartial")
 </div>
 <table class="table table-striped">
     <thead>
@@ -36,17 +36,21 @@
                 <td>@item.Province</td>
                 <td>@item.District</td>
                 <td>@item.SaleQuentity</td>
-                <td><button class="btn btn-success" onclick="showSaleForm()">Satış Yap </button></td>
+                <td><button class="btn btn-success open-sale-form">Satış Yap</button></td>
                 <td>
-                    <div id="saleForm" style="display:none">
+                    <div class="sale-form" style="display:none">
                         Kaç adet satış yapılacak: <input type="number" />
                         <input type="button" value="Onayla" class="btn btn-warning">
-                        <input id="closeForm" type="button" value="Kapat" class="btn btn-danger" onclick="closeSaleForm()">
+                        <input type="button" value="Kapat" class="btn btn-danger close-sale-form">
                     </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<br />
+@* Grafik *@
+@Html.Partial("_ModalGraphicPartial")
+
 <br />
 <br />
