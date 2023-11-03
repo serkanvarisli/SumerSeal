@@ -1,15 +1,23 @@
-﻿<canvas id="myChart" width="400" height="400"></canvas>
+﻿@model List<Sale>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<div style="max-width: 400px;">
+    <!-- Grafiği istediğiniz genişlikte sınırlamak için bir div kullanabilirsiniz -->
+    <canvas id="myChart" width="200" height="200"></canvas> <!-- Canvas boyutlarını düşürün -->
+</div>
+
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
-    var provinces = @Html.Raw(Json.Serialize(ViewBag.Provinces));
-    var saleQuantities = @Html.Raw(Json.Serialize(ViewBag.SaleQuantities));
+
+    var labels = @Html.Raw(Json.Serialize(Model.Select(s => s.Province)));
+    var data = @Html.Raw(Json.Serialize(Model.Select(s => s.SaleQuentity)));
 
     var chart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: provinces,
+            labels: labels,
             datasets: [{
-                data: saleQuantities,
+                data: data,
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(255, 99, 132, 0.2)',
@@ -17,7 +25,6 @@
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
                     'rgba(255, 159, 64, 0.2)'
-                    // İhtiyaca göre renkler ekleyebilirsiniz
                 ],
                 borderColor: [
                     'rgba(75, 192, 192, 1)',

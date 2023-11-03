@@ -27,15 +27,12 @@ public partial class MyDbContext : DbContext
     {
         modelBuilder.Entity<Sale>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Sale");
+            entity.ToTable("Sale");
 
             entity.Property(e => e.CustomerCode).IsUnicode(false);
             entity.Property(e => e.CustomerTitle).IsUnicode(false);
             entity.Property(e => e.District).IsUnicode(false);
             entity.Property(e => e.Province).IsUnicode(false);
-            entity.Property(e => e.SaleQuentity).IsUnicode(false);
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -44,6 +41,7 @@ public partial class MyDbContext : DbContext
                 .HasNoKey()
                 .ToTable("User");
 
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Password).IsUnicode(false);
             entity.Property(e => e.Username).IsUnicode(false);
         });

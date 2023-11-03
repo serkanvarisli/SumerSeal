@@ -60,9 +60,8 @@ namespace ShoppingList.Controllers
         [AllowAnonymous]
         public IActionResult Logout()
         {
-            // Oturumu sonlandırma işlemleri
-            HttpContext.SignOutAsync("UserAuthentication"); // Oturumu sonlandır
-            return RedirectToAction("Index", "Home"); // Anasayfaya yönlendir
+            HttpContext.SignOutAsync("UserAuthentication"); 
+            return RedirectToAction("Index", "Home");
         }
     }
 }

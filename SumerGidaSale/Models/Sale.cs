@@ -5,15 +5,15 @@ namespace SumerGidaSale.Models;
 
 public partial class Sale
 {
-    public int? Id { get; set; }
+    public int Id { get; set; }
 
-    public string CustomerCode { get; set; }
+    public string CustomerCode { get; set; } = null!;
 
-    public string CustomerTitle { get; set; }
+    public string CustomerTitle { get; set; } = null!;
 
-    public string Province { get; set; } 
+    public string Province { get; set; } = null!;
 
-    public string District { get; set; }
+    public string District { get; set; } = null!;
 
-    public string SaleQuentity { get; set; } 
+    public int SaleQuentity { get; set; }
 }
