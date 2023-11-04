@@ -1,2 +1,2 @@
 # SumerSeal
-Deneme için veritabanında kullanıcı adı user şifre 123
+Deneme için veritabanında kullanıcı adı:user şifre:123
