@@ -1,30 +1,30 @@
 ﻿
 @* Kayıt Ekle *@
 <div id="myModal" style="display: none;">
-    <form>
+    <form asp-action="Add" asp-controller="Home" method="post">
         <div class="form-group">
             <label for="customerCode">Müşteri Kodu:</label>
-            <input type="text" class="form-control form-control-sm" id="customerCode" placeholder="Müşteri Kodu Girin" />
+            <input type="text" class="form-control form-control-sm" id="customerCode" name="CustomerCode" placeholder="Müşteri Kodu Girin" required/>
         </div>
         <div class="form-group">
             <label for="customerTitle">Müşteri Ünvanı:</label>
-            <input type="text" class="form-control form-control-sm" id="customerTitle" placeholder="Müşteri Ünvanı Girin" />
+            <input type="text" class="form-control form-control-sm" id="customerTitle" name="CustomerTitle" placeholder="Müşteri Ünvanı Girin" required />
         </div>
         <div class="form-group">
             <label for="province">İl:</label>
-            <input type="text" class="form-control form-control-sm" id="province" placeholder="İl girin" />
+            <input type="text" class="form-control form-control-sm" id="province" name="Province" placeholder="İl girin" required />
         </div>
         <div class="form-group">
             <label for="district">İlçe:</label>
-            <input type="text" class="form-control form-control-sm" id="district" placeholder="İlçe girin" />
+            <input type="text" class="form-control form-control-sm" id="district" name="District" placeholder="İlçe girin" required />
         </div>
         <div class="form-group">
             <label for="saleQuantity">Satış Miktarı:</label>
-            <input type="text" class="form-control form-control-sm" id="saleQuantity" placeholder="Satış miktarı girin" />
+            <input type="number" class="form-control form-control-sm" id="saleQuantity" name="SaleQuentity" placeholder="Satış miktarı girin" required />
         </div>
         <br />
         <div class="form-group text-center">
-            <button type="button" class="btn btn-primary">Ekle</button>
+            <input type="submit" class="btn btn-primary" value="Ekle"></input>
         </div>
     </form>
 </div>

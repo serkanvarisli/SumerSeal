@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SumerGidaSale.Models;
-using System.Collections;
-using System.Web.Helpers;
 
 namespace SumerGidaSale.Controllers
 {
@@ -30,6 +29,30 @@ namespace SumerGidaSale.Controllers
             var sales = _context.Sales.ToList();
 
             return View(sales);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Sale sale)
+        {
+            _context.Sales.Add(sale);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpPost]
+        public IActionResult Update(int value, int Id)
+        {
+            var quentityToUpdate = _context.Sales.FirstOrDefault(s => s.Id == Id);
+            if(value > 0)
+            {
+            quentityToUpdate.SaleQuentity += value;
+            }
+            else
+            {
+                TempData["Hata"] = "Guncelleme Basarisiz. Satis sayisi sifir veya negatif sayi olamaz";
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

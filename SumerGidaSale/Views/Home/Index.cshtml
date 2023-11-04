@@ -36,11 +36,14 @@
                 <td>@item.Province</td>
                 <td>@item.District</td>
                 <td>@item.SaleQuentity</td>
-                <td><button class="btn btn-success open-sale-form">Satış Yap</button></td>
+                <td><button class="btn btn-success open-sale-form" data-item-id="@item.Id">Satış Yap</button></td>
                 <td>
                     <div class="sale-form" style="display:none">
-                        Kaç adet satış yapılacak: <input type="number" />
-                        <input type="button" value="Onayla" class="btn btn-warning">
+                        <form asp-action="Update" asp-controller="Home" method="post">
+                            <input type="hidden" name="Id" value="@item.Id" />
+                        Kaç adet satış yapılacak: <input type="number" name="value" id="value" />
+                        <input type="submit" value="Onayla" class="btn btn-warning">
+                        </form>
                         <input type="button" value="Kapat" class="btn btn-danger close-sale-form">
                     </div>
                 </td>
@@ -48,6 +51,12 @@
         }
     </tbody>
 </table>
+<script>
+    var errorMessage = '@TempData["Hata"]';
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+</script>
 <br />
 @* Grafik *@
 @Html.Partial("_ModalGraphicPartial")
